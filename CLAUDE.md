@@ -27,6 +27,20 @@ implementation + certificate → trusted checker → optimizer + backend.
   (reject) as a per-module policy flag.
 - Termination (`decreases`) deferred to phase 1.5; the checker lists loops without it.
 - Backend in phase 1: LLVM IR as text. MLIR later, if ever.
+- Surface syntax follows Zig: `const`/`var`, `fn f(x: T) R` (no `->`), parenthesized `if`/`while`
+  conditions, `while (c) : (i = i + 1)`, `[]const T` slices, `[_]T{...}` literals, `and`/`or`/`!`.
+  Deviations (all listed in `docs/formal-core.md`): `@intCast(T, e)` takes the type explicitly;
+  contract keywords; left-to-right evaluation; `.len` is `u64`.
+- Spec mode uses unbounded mathematical integers: no overflow obligations inside contracts.
+- `forall` in contracts is restricted to the array property fragment.
+- Calls are A-normalized; structs are flattened (no references in phase 1).
+- WP asserts are assert-then-assume: later obligations may rely on earlier ones.
+- One SMT query per obligation, never one big formula.
+
+## Key files
+
+- `docs/formal-core.md`: grammar, typing, capability rule, expression semantics, WP rules, query format.
+- `smt/max/`: hand-written reference queries; the VC generator's first test suite.
 
 ## Conventions
 

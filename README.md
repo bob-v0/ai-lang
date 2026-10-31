@@ -17,13 +17,18 @@ hand-written in SMT-LIB2 and checked with Z3 and cvc5. All obligations prove;
 every deliberately broken variant yields the expected counterexample. See
 `smt/max/results.txt`.
 
-Next: the formal core (grammar, typing rules, weakest-precondition rules), then
-the Zig implementation of the kernel.
+Formal core drafted: `docs/formal-core.md` (grammar, typing, capability rule,
+expression semantics, weakest-precondition rules, query format).
+
+Next: the Zig implementation of the kernel, in order: lexer and parser, type and
+capability checker, VC generator emitting SMT-LIB2 (diffed against `smt/max/`),
+LLVM IR text backend.
 
 ## Layout
 
 | Path | What |
 | --- | --- |
+| `docs/formal-core.md` | Phase-1 formal core |
 | `smt/max/gen.py` | Writes one SMT-LIB2 query per obligation for `max` and its broken variants |
 | `smt/max/run.py` | Runs every query through Z3 and cvc5, then a seed/shuffle determinism check |
 | `smt/max/results.txt` | Output of the last run |

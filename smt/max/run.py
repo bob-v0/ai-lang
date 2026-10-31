@@ -61,8 +61,8 @@ def main(root):
             print(f"{d:<14}{name:<26}{r:<9}{c:<9}{rl!s:>9}  {model or ''}{flag}")
 
     # determinism: 20 seeds x shuffled assertion order, on the proven variant
-    print("\nDeterminism (variant ok + no_inv_upper, 20 seeds, shuffled assertions):")
-    for d in ("ok", "no_inv_upper"):
+    print("\nDeterminism (variants ok, inv2_only, elem_axiom; 20 seeds, shuffled assertions):")
+    for d in ("ok", "inv2_only", "elem_axiom"):
         for f in sorted(glob.glob(os.path.join(root, d, "*.smt2"))):
             results, rls = set(), []
             for seed in range(20):
