@@ -1,0 +1,71 @@
+variant       obligation                z3       cvc5        rlimit  counterexample
+abs           o01_neg_x_overflow        sat      sat            324  {'x': '-2147483648'}
+i_u8          o01_xs0_bounds            unsat    unsat           42  
+i_u8          o02_inv1_entry            unsat    unsat          157  
+i_u8          o03_inv2_entry            unsat    unsat          610  
+i_u8          o04_xsi_bounds            unsat    unsat          212  
+i_u8          o05_i_plus_1_overflow     sat      sat           2272  {'i': '255', 'len': '256', 'm': '0', 'xs[0]': '-11797', 'xs[1]': '-11797'}
+i_u8          o06_inv1_preserved        unsat    unsat         1268  
+i_u8          o07_inv2_preserved        unsat    unsat         1890  
+i_u8          o08_inv2_wellformed       unsat    unsat         1588  
+i_u8          o09_postcondition         unsat    unsat         1599  
+i_u8          o10_main_requires         unsat    unsat           29  
+no_inv2       o01_xs0_bounds            unsat    unsat           42  
+no_inv2       o02_inv1_entry            unsat    unsat          157  
+no_inv2       o04_xsi_bounds            unsat    unsat          137  
+no_inv2       o05_i_plus_1_overflow     unsat    unsat          395  
+no_inv2       o06_inv1_preserved        unsat    unsat          698  
+no_inv2       o09_postcondition         sat      sat           1174  {'i': '1', 'len': '1', 'm': '-2147462410', 'xs[0]': '-2147462409'}
+no_inv2       o10_main_requires         unsat    unsat           29  
+no_inv_upper  o01_xs0_bounds            unsat    unsat           42  
+no_inv_upper  o02_inv1_entry            unsat    unsat           38  
+no_inv_upper  o03_inv2_entry            unsat    unsat          610  
+no_inv_upper  o04_xsi_bounds            unsat    unsat          203  
+no_inv_upper  o05_i_plus_1_overflow     unsat    unsat          489  
+no_inv_upper  o06_inv1_preserved        unsat    unsat          121  
+no_inv_upper  o07_inv2_preserved        unsat    unsat         1835  
+no_inv_upper  o08_inv2_wellformed       unsat    unsat         1529  
+no_inv_upper  o09_postcondition         unsat    unsat         1539  
+no_inv_upper  o10_main_requires         unsat    unsat           29  
+no_requires   o01_xs0_bounds            sat      sat            121  {'len': '0'}
+no_requires   o02_inv1_entry            sat      sat            107  {'len': '0'}
+no_requires   o03_inv2_entry            unsat    unsat          521  
+no_requires   o04_xsi_bounds            unsat    unsat          195  
+no_requires   o05_i_plus_1_overflow     unsat    unsat          471  
+no_requires   o06_inv1_preserved        unsat    unsat         1172  
+no_requires   o07_inv2_preserved        unsat    unsat         1801  
+no_requires   o08_inv2_wellformed       unsat    unsat         1491  
+no_requires   o09_postcondition         unsat    unsat         1500  
+no_requires   o10_main_requires         unsat    unsat           29  
+ok            o01_xs0_bounds            unsat    unsat           42  
+ok            o02_inv1_entry            unsat    unsat          157  
+ok            o03_inv2_entry            unsat    unsat          610  
+ok            o04_xsi_bounds            unsat    unsat          212  
+ok            o05_i_plus_1_overflow     unsat    unsat          519  
+ok            o06_inv1_preserved        unsat    unsat         1268  
+ok            o07_inv2_preserved        unsat    unsat         1890  
+ok            o08_inv2_wellformed       unsat    unsat         1588  
+ok            o09_postcondition         unsat    unsat         1599  
+ok            o10_main_requires         unsat    unsat           29  
+
+Determinism (variant ok + no_inv_upper, 20 seeds, shuffled assertions):
+  ok            o01_xs0_bounds            results=['unsat']  rlimit min/max=42/42
+  ok            o02_inv1_entry            results=['unsat']  rlimit min/max=157/157
+  ok            o03_inv2_entry            results=['unsat']  rlimit min/max=610/610
+  ok            o04_xsi_bounds            results=['unsat']  rlimit min/max=184/246
+  ok            o05_i_plus_1_overflow     results=['unsat']  rlimit min/max=519/519
+  ok            o06_inv1_preserved        results=['unsat']  rlimit min/max=1246/1276
+  ok            o07_inv2_preserved        results=['unsat']  rlimit min/max=1890/1964
+  ok            o08_inv2_wellformed       results=['unsat']  rlimit min/max=1588/1589
+  ok            o09_postcondition         results=['unsat']  rlimit min/max=1591/1599
+  ok            o10_main_requires         results=['unsat']  rlimit min/max=19/29
+  no_inv_upper  o01_xs0_bounds            results=['unsat']  rlimit min/max=42/42
+  no_inv_upper  o02_inv1_entry            results=['unsat']  rlimit min/max=16/38
+  no_inv_upper  o03_inv2_entry            results=['unsat']  rlimit min/max=610/610
+  no_inv_upper  o04_xsi_bounds            results=['unsat']  rlimit min/max=176/237
+  no_inv_upper  o05_i_plus_1_overflow     results=['unsat']  rlimit min/max=489/489
+  no_inv_upper  o06_inv1_preserved        results=['unsat']  rlimit min/max=121/121
+  no_inv_upper  o07_inv2_preserved        results=['unsat']  rlimit min/max=1835/1909
+  no_inv_upper  o08_inv2_wellformed       results=['unsat']  rlimit min/max=1529/1530
+  no_inv_upper  o09_postcondition         results=['unsat']  rlimit min/max=1539/1539
+  no_inv_upper  o10_main_requires         results=['unsat']  rlimit min/max=19/29
